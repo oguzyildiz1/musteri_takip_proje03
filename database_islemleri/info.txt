@@ -1,0 +1,5 @@
+a= "INSERT INTO ogrenciler (ad, telefon) VALUES (%s, %s)"
+b= ("Ensar BUDAK", "05446235847")
+mycursor.execute(a, b) 
+
+mydb.commit()
