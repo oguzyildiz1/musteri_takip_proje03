@@ -1,0 +1,24 @@
+Login Ekranı
+
+Müteri Bilgi Ekranı
+    - Müşteri Bilgisini görüntüle
+    - Müşteri Bilgisi update
+
+Ürün/ Stok Ekranı
+    - Sipariş görüntüle
+    - Ürün görüntüle
+
+-----------------------------------
+kaldığım yer: musteri_goruntu/musteri_gor.py,  line= 29
+
+yapılan : 
+
+1. class MusteriGoruntule(QMainWindow) oluşturuldu
+2. Müşteri Adı arama ve butonu oluşturuldu.
+
+yapılacak:
+    1. database'den isim, soyisim, adres vs alınıp ekrana basılacak
+
+bakılacak dosya: deneme/widget_veri_alma.py 
+
+----------------------------------------------

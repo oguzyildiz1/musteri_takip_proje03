@@ -24,7 +24,7 @@ def kullaniciEkle():
     mydb.commit()
 
 
-def kullaniciGoruntule():
+def kullaniciGoruntule(): #amac: kullanıcı bilgilerini döndürmek.
     try:
         # goruntulemek icin girdi al
         girdi = "*"
@@ -33,6 +33,8 @@ def kullaniciGoruntule():
         
         mycursor.execute(sql)
         result = mycursor.fetchall()
+
+        return result # kullanıcı bilgilerini döndürdüm
 
         
 
@@ -45,6 +47,3 @@ def kullaniciGoruntule():
 
     except:
         print("Görüntülenme hatası")
-
-
-kullaniciGoruntule()

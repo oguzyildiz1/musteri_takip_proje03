@@ -1,5 +1,5 @@
 from PyQt6.QtWidgets import *
-
+import database_islemleri.databaseislem as di #bu bağlantı müşteri görüntülemek için
 #-------- login ekranı --------------
 class Mainwindow(QMainWindow):
 
@@ -68,9 +68,9 @@ class SiparisMenu(QMainWindow):
         super().__init__()
 
         mainContent = QVBoxLayout()
-        button1 = QPushButton("Sipariş Ver")
+        button1 = QPushButton("Müşteri Bilgileri")
         mainContent.addWidget(button1)
-        button1.clicked.connect(self.siparisVer)
+        button1.clicked.connect(self.musteriAc)
 
         button2 = QPushButton("Sipariş Takip")
         mainContent.addWidget(button2)
@@ -81,28 +81,49 @@ class SiparisMenu(QMainWindow):
         self.setCentralWidget(window)
 
 
-    def siparisVer(self):
-        self.siparis = Siparisprogrami()
-        self.siparis.show()
+    def musteriAc(self): # musteri bilgileri penceresini acar
+        self.close()
+        self.musteri = MusteriBilgileri()
+        self.musteri.show()
 
     
     def siparisTakipEt(self):
         pass
 
 
-class Siparisprogrami(QMainWindow):
+class MusteriBilgileri(QMainWindow): #ikinci menude
     def __init__(self):
         super().__init__()
+        # -----  musteri bilgilerini database'den alma ----
+        musteri_bilgisi = di.kullaniciGoruntule() #bu kütüphane bana kullanıcı bilgilerini döndürüyor.
 
-        mainContent = QVBoxLayout()
-        mainContent.addWidget(QLabel("Sipariş Ver"))
+        mainContent = QVBoxLayout() #main container
+        mainContent.addWidget(QLabel("Adı"))
+        mainContent.addWidget(QLineEdit())
+        
+        
+        # bir bilgiyi ekrana nasıl yazarım?
+        #Qlabel deneme yapıyorum 
+        #database'den bilgileri alacam
+        #sonra qWidget içine koyacağım
 
+        #kullanici_bilgileri = di.kullaniciGoruntule() # di, database islemleri kısaltmasıdır.
+
+        #for x in kullanici_bilgileri:
+            # print(x)
+
+    #yeni bir metod kullancağım. bu metod kullanıcı bilgilerini oop ile saklayacak
+    def musteriBilgileriYaz(self):
+
+
+
+
+        """
         window = QWidget()
         window.setLayout(mainContent)
         self.setCentralWidget(window)
+        """
 
-
-print("AD")
 
 mainApp = QApplication([])
 
@@ -110,3 +131,6 @@ mainWin = Mainwindow()
 mainWin.show()
 
 mainApp.exec()
+
+
+# di.kullaniciGoruntule()
