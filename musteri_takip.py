@@ -1,8 +1,10 @@
 from PyQt6.QtWidgets import *
-import database_islemleri.databaseislem as di #bu bağlantı müşteri görüntülemek için
+import database_islemleri.veri_alma as di #bu bağlantı müşteri görüntülemek için
 #-------- login ekranı --------------
-class Mainwindow(QMainWindow):
+import musteri_goruntu.musteri_gor as mg
 
+class Mainwindow(QMainWindow):
+#login ekranı
     def __init__(self):
         super().__init__()
         self.setWindowTitle("Login Ekranı")
@@ -83,7 +85,7 @@ class SiparisMenu(QMainWindow):
 
     def musteriAc(self): # musteri bilgileri penceresini acar
         self.close()
-        self.musteri = MusteriBilgileri()
+        self.musteri = mg.MusteriGoruntule()
         self.musteri.show()
 
     
@@ -113,17 +115,14 @@ class MusteriBilgileri(QMainWindow): #ikinci menude
             # print(x)
 
     #yeni bir metod kullancağım. bu metod kullanıcı bilgilerini oop ile saklayacak
-    def musteriBilgileriYaz(self):
+"""
 
 
 
-
-        """
-        window = QWidget()
-        window.setLayout(mainContent)
-        self.setCentralWidget(window)
-        """
-
+window = QWidget()
+window.setLayout(mainContent)
+self.setCentralWidget(window)
+"""
 
 mainApp = QApplication([])
 

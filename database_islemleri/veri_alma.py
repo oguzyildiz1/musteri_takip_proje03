@@ -24,7 +24,25 @@ def kullaniciEkle():
     mydb.commit()
 
 
-def kullaniciGoruntule(): #amac: kullanıcı bilgilerini döndürmek.
+def kullaniciVeriAl(para1):
+    try:
+
+        girdi = para1 #ad geldi
+
+        sql = 'SELECT * FROM musteriler WHERE ADI = "%s"' % girdi #aranan adı
+        # sql = 'SELECT * FROM musteriler WHERE ADI = "Oğuzhan"' % girdi #aranan adı
+
+        mycursor.execute(sql)
+        result = mycursor.fetchall()
+
+        return result #arana kişini tüm verilerini döndürür
+
+    except:
+        print("Görüntülenme hatası!")
+
+
+
+def kullaniciDataAl2(): #amac: kullanıcı bilgilerini döndürmek.
     try:
         # goruntulemek icin girdi al
         girdi = "*"
@@ -47,3 +65,4 @@ def kullaniciGoruntule(): #amac: kullanıcı bilgilerini döndürmek.
 
     except:
         print("Görüntülenme hatası")
+

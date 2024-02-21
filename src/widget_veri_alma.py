@@ -25,7 +25,7 @@ class ceviriPenceresi(QMainWindow):
         # self.label1.setText("yeni metin")
         self.label1.setText(self.label1.text()+self.yazmakutusu.text())
         #aaa = self.yazmakutusu.text()
-        print(aaa)
+        print("")
 
 uygulama = QApplication(sys.argv)
 pencere = ceviriPenceresi()

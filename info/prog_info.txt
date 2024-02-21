@@ -1,24 +1,39 @@
-Login Ekranı
+Login Ekranı (Yapıldı)
 
-Müteri Bilgi Ekranı
-    - Müşteri Bilgisini görüntüle
-    - Müşteri Bilgisi update
+Müteri Bilgi Ekranı 
+    - Müşteri Bilgisini görüntüle (yapıldı)
+    - Müşteri Bilgisi update (sonraki yapılacak bölüm)
 
 Ürün/ Stok Ekranı
     - Sipariş görüntüle
     - Ürün görüntüle
 
------------------------------------
+
+----------------------------------- 21.02.2024 1. oturum
+
 kaldığım yer: musteri_goruntu/musteri_gor.py,  line= 29
 
 yapılan : 
 
-1. class MusteriGoruntule(QMainWindow) oluşturuldu
-2. Müşteri Adı arama ve butonu oluşturuldu.
+    1. class MusteriGoruntule(QMainWindow) oluşturuldu
+    2. Müşteri Adı arama ve butonu oluşturuldu.
 
 yapılacak:
     1. database'den isim, soyisim, adres vs alınıp ekrana basılacak
 
 bakılacak dosya: deneme/widget_veri_alma.py 
 
-----------------------------------------------
+------------------------------------------21.02.2024 2. oturum
+
+calisilan klasör: musteri_goruntu/musteri_gor.py
+
+yapılan:
+    1. import library sorunu düzeltildi
+    2. kullanıcı görüntüleme modulu bitti. Stil olarak iyileştirilmesi gerekiyor.
+
+yapılacak: 
+    1. Ekran düzeni oluşturulacak (yapıldı)
+    2. bu pencere tasarım olarak iyileştirilecek
+
+
+------------------------------------------
