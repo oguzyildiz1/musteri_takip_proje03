@@ -36,5 +36,12 @@ yapılacak:
     2. bu pencere tasarım olarak iyileştirilecek
     3. tamam butonu eklenecek
 
+sorun: 
+    1. Son window kapanınca tüm programndan çıkıyor. 
+    2. Onun yerine ana menude kalması lazım.
 
 ------------------------------------------
+yapılacak: 
+    1. main window düzeltilecek, diğer dosyalardan gelen windowlar asıl dosyaya eklenecek
+    2. https://www.pythonguis.com/tutorials/pyqt6-creating-multiple-windows/
+        buradan window çalışma mantığına göre kod yeniden yazılacak
