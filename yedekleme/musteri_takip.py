@@ -57,10 +57,10 @@ class Mainwindow(QMainWindow):
         self.setCentralWidget(container)
 
 
-    def AnaMenuAc(self):
+    def siparisMenuAc(self):
         self.close()
-        self.anaMenu = AnaMenu()
-        self.anaMenu.show()
+        self.siparisMenu = AnaMenu()
+        self.siparisMenu.show()
         ### ####
 
 
@@ -92,7 +92,7 @@ class AnaMenu(QMainWindow):
     def siparisTakipEt(self):
         pass
 
-"""
+
 class MusteriBilgileri(QMainWindow): #ikinci menude
     def __init__(self):
         super().__init__()
@@ -113,7 +113,7 @@ class MusteriBilgileri(QMainWindow): #ikinci menude
 
         #for x in kullanici_bilgileri:
             # print(x)
-"""
+
     #yeni bir metod kullancağım. bu metod kullanıcı bilgilerini oop ile saklayacak
 """
 

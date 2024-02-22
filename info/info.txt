@@ -1,0 +1,2 @@
+    def pencereKapat(self): kaldım
+        # mt.AnaMenu

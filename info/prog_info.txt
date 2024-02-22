@@ -34,6 +34,7 @@ yapılan:
 yapılacak: 
     1. Ekran düzeni oluşturulacak (yapıldı)
     2. bu pencere tasarım olarak iyileştirilecek
+    3. tamam butonu eklenecek
 
 
 ------------------------------------------
