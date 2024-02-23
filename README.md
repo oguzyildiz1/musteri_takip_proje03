@@ -12,6 +12,7 @@
 <h5>Musteri Arama</h5>
 <img src="./src/images/musteri_ara.png">
 <p>Aranacak müşterinin ismini girinip, bilgilerine ulaşabilirsiniz</p>
+<hr>
 <h5>Kullanıcı Bilgileri</h5>
 <img src="./src/images/kullan_bilgi.png">
 <p>Kullanıcı ile ilgili verileri görüntüler.</p>
