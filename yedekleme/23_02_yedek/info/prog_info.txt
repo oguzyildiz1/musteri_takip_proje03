@@ -1,5 +1,4 @@
 Login Ekranı (Yapıldı)
-Login sistemi (kurulacak)
 
 Müteri Bilgi Ekranı 
     - Müşteri Bilgisini görüntüle (yapıldı)
@@ -43,13 +42,6 @@ sorun:
 
 ------------------------------------------
 yapılacak: 
-    1. main window düzeltilecek, diğer dosyalardan gelen windowlar asıl dosyaya eklenecek (yapıldı)
+    1. main window düzeltilecek, diğer dosyalardan gelen windowlar asıl dosyaya eklenecek
     2. https://www.pythonguis.com/tutorials/pyqt6-creating-multiple-windows/
-        buradan window çalışma mantığına göre kod yeniden yazılacak (yapıldı)
-----------------------------------
-
-----------------------------23.02.2024
-1. musteri görüntüleme çalışıyor...
-2. https://www.pythonguis.com/tutorials/pyqt6-creating-multiple-windows/ öğrenildi
-
-bittii....
+        buradan window çalışma mantığına göre kod yeniden yazılacak

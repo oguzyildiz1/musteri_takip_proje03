@@ -1,0 +1,8 @@
+acılan pencerenin hemen kaybolmasını istemiyorsan onu self. ile kaydetmek gerekiyor
+
+ör :        
+    self.musteriBilgiEkrani = MusteriBilgisi() 
+    self.musteriBilgiEkrani.show()
+    gibi... 
+
+

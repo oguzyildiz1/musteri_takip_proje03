@@ -1,2 +1,6 @@
     def pencereKapat(self): kaldım
         # mt.AnaMenu
+
+degisti1 (kullanıcıbilgiekranı -> musteri_bilgi_yolla)
+
+if kullanılacak

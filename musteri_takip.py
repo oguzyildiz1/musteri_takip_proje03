@@ -84,45 +84,122 @@ class AnaMenu(QMainWindow):
 
 
     def musteriAc(self): # musteri bilgileri penceresini acar
-        self.close()
-        self.musteri = mg.MusteriGoruntule()
+        # self.close()
+        self.musteri = MusteriGoruntule()
         self.musteri.show()
 
     
     def siparisTakipEt(self):
         pass
 
-"""
-class MusteriBilgileri(QMainWindow): #ikinci menude
+
+class MusteriGoruntule(QMainWindow):
+#aranacak kişini girdisini alan pencereyi yapan metod
     def __init__(self):
         super().__init__()
-        # -----  musteri bilgilerini database'den alma ----
-        musteri_bilgisi = di.kullaniciGoruntule() #bu kütüphane bana kullanıcı bilgilerini döndürüyor.
 
-        mainContent = QVBoxLayout() #main container
-        mainContent.addWidget(QLabel("Adı"))
-        mainContent.addWidget(QLineEdit())
+        self.setWindowTitle("Musteri Arama")
+
+        icerik = QVBoxLayout() #main window
+
+        icerik.addWidget(QLabel("Müsteri Adı: ")) #müşteri adı
+        self.aranan = QLineEdit()
+        icerik.addWidget(self.aranan)
+        self.veri = self.aranan.text()
+
+        arama_btn = QPushButton("Ara") #arama butonu
+        icerik.addWidget(arama_btn)
+        arama_btn.clicked.connect(self.kullaniciBilgiAl)
         
+#aranan isimin bilgilerini yazdır
+
+        araclar = QWidget()
+        araclar.setLayout(icerik)
+        self.setCentralWidget(araclar)
+
+#kullanıcı bilgilerini database'den alan metod
+    def kullaniciBilgiAl(self): #burada kaldım
+        aranan_text = self.aranan.text() #bilgiyi ekrana yazıyor.
+        print(aranan_text) ### 
+
+        self.kullanici_bilgisi = di.kullaniciVeriAl(aranan_text)# 
+        print(self.kullanici_bilgisi)
         
-        # bir bilgiyi ekrana nasıl yazarım?
-        #Qlabel deneme yapıyorum 
-        #database'den bilgileri alacam
-        #sonra qWidget içine koyacağım
+        self.musteri_bilgi_yolla() #degisti1
 
-        #kullanici_bilgileri = di.kullaniciGoruntule() # di, database islemleri kısaltmasıdır.
-
-        #for x in kullanici_bilgileri:
-            # print(x)
-"""
-    #yeni bir metod kullancağım. bu metod kullanıcı bilgilerini oop ile saklayacak
-"""
+#data yollama metodu
+    def musteri_bilgi_yolla(self):
+        data_tran.receive_data(self.kullanici_bilgisi)
+        self.close()
+        #musteri bilgisi açılıyor.
+        self.musteriBilgiEkrani = MusteriBilgisi() 
+        self.musteriBilgiEkrani.show()
 
 
+class MusteriBilgisi(QMainWindow):
+#musteri bilgisi ekranı
+    def __init__(self):
+        super().__init__()
+        self.setWindowTitle("Musteri Bilgisi")
 
-window = QWidget()
-window.setLayout(mainContent)
-self.setCentralWidget(window)
-"""
+        self.kullanici_bilgisi = data_tran.data1
+        print(self.kullanici_bilgisi)
+
+        self.adi = self.kullanici_bilgisi[0][1] # 0 liste içindeki tuple'nı
+        self.soyadi = self.kullanici_bilgisi[0][2]
+        self.email = self.kullanici_bilgisi[0][4]
+        self.telNo = self.kullanici_bilgisi[0][5]
+        self.adres = self.kullanici_bilgisi[0][6]
+
+        #------ degiskenleri yazdırma
+        self.setWindowTitle("Kullanıcı Bilgileri")
+        icerik = QVBoxLayout() #main window
+
+        labelAdi = QLabel("Adı: " + self.adi)
+        icerik.addWidget(labelAdi)
+
+        labelSoyadi = QLabel("Soyadı: " + self.soyadi)
+        icerik.addWidget(labelSoyadi)
+
+        labelEmail = QLabel("Email: " + self.email)
+        icerik.addWidget(labelEmail)
+
+        labelTelNo = QLabel("Tel: " + self.telNo)
+        icerik.addWidget(labelTelNo)
+
+        labelAdres = QLabel("Adres: " + self.adres)
+        icerik.addWidget(labelAdres)
+
+        button1 = QPushButton("Tamam") #tama butonu
+        icerik.addWidget(button1)
+        button1.clicked.connect(self.pencereKapat)
+        
+        araclar = QWidget()
+        araclar.setLayout(icerik)
+        self.setCentralWidget(araclar)
+
+        ###    bu pencere tasarım olarak iyileştirilecek
+
+    def data_al(self, data): #d
+        print(data)
+
+    def pencereKapat():
+        pass
+
+
+class DataTransfer():
+    def receive_data(self,data="No Data"):
+        self.data1 = data
+    
+    def printer(self):
+        print(self.data1, "data transfer")
+
+#class örneği ----------
+# data_tran = DataTransfer()
+# data_tran.receive_data("google")
+# print(data_tran.printer())
+# -----------------------------
+data_tran = DataTransfer()
 
 mainApp = QApplication([])
 
