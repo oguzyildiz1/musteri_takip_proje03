@@ -142,7 +142,7 @@ class MusteriBilgisi(QMainWindow):
         self.setWindowTitle("Musteri Bilgisi")
 
         self.kullanici_bilgisi = data_tran.data1
-        # print(self.kullanici_bilgisi)
+        print(self.kullanici_bilgisi)
 
         self.adi = self.kullanici_bilgisi[0][1] # 0 liste içindeki tuple'nı
         self.soyadi = self.kullanici_bilgisi[0][2]
@@ -242,31 +242,8 @@ class MusteriEkleme(QMainWindow):
             self.adres_veri
             ]
         
-        basarili = di.kullaniciEkle(musEkLis)
-        if basarili:
-            self.basarili = BasariliPencere()
-            self.basarili.show()
-
+        di.kullaniciEkle(musEkLis)
         # print(musEkLis)
-
-
-class BasariliPencere(QMainWindow):
-    def __init__(self):
-        super().__init__()
-        icerik = QVBoxLayout()
-
-        icerik.addWidget(QLabel("Kişi başarıyla eklendi"))
-        tamamBut = QPushButton("Tamam")
-        icerik.addWidget(tamamBut)
-        tamamBut.clicked.connect(self.penKapat)
-
-        araclar = QWidget()
-        araclar.setLayout(icerik)
-        self.setCentralWidget(araclar)
-    
-    def penKapat(self):
-        self.close()
-
 
 class DataTransfer():
     def receive_data(self,data="No Data"):

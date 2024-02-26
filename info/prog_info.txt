@@ -53,3 +53,15 @@ yapılacak:
 2. https://www.pythonguis.com/tutorials/pyqt6-creating-multiple-windows/ öğrenildi
 
 bittii....
+
+-+---------------------26.02.2024
+1.
+yapılanlar:
+    müsteri ekleme bölümü yapıldı...
+1. müşteri ekleme sınıfı yazıldı
+    MusteriEkleme()
+2. veri_alma > kullanıcı ekle sınıfı yazıldı
+3. Anamenu düzeltildi
+
+yapılacak:
+    login ekranı çalışır hale getirilecek
