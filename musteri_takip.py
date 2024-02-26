@@ -218,8 +218,6 @@ class MusteriEkleme(QMainWindow):
         self.but_ekle.clicked.connect(self.musEkleme)
 
 #-------- veri alma start -----------
-
-
         araclar = QWidget()
         araclar.setLayout(musEklePen)
         self.setCentralWidget(araclar)
@@ -249,7 +247,7 @@ class MusteriEkleme(QMainWindow):
 
         # print(musEkLis)
 
-
+#--------- kisi başarılı eklenenince ----------------
 class BasariliPencere(QMainWindow):
     def __init__(self):
         super().__init__()
